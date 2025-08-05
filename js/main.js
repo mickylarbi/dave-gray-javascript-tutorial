@@ -1,33 +1,14 @@
-const myNumber = 42
+console.log(Math.PI)
 
-const myFloat = 42.5
+console.log(Math.trunc(Math.PI))
+console.log(Math.round(Math.PI))
+console.log(Math.ceil(Math.PI))
+console.log(Math.floor(Math.PI))
 
-const myString = '42'
+console.log(Math.pow(2, 4))
 
-console.log(myNumber)
+console.log(Math.min(2, 4, 1, 5, 2, 5))
+console.log(Math.max(2, 4, 1, 5, 2, 5))
 
-console.log(myString === myNumber)
-
-const myNumberFromMyString = Number(myString)
-
-console.log(myNumberFromMyString === myNumber)
-
-
-console.log(Number(true), Number(false))
-
-console.log(Number.isInteger(myNumber))
-console.log(Number.isInteger(myFloat))
-
-console.log(Number.parseFloat(myNumber))
-console.log(Number.parseFloat(myString))
-console.log(Number.parseFloat("KKK"))
-
-
-console.log(myNumber.toFixed(2))
-
-console.log(Number.parseFloat(myFloat))
-console.log(Number.parseFloat(myString))
-console.log(Number.parseFloat("KKK"))
-
-console.log(Number.isNaN("Dave")) // checks if value is NaN and type is number
-console.log(isNaN("Dave")) // checks if value is NaN
+console.log(Math.random())
+console.log(Math.floor(Math.random() * 10) + 1) // generate random numbers from 1 to 10
