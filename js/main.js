@@ -1,13 +1,9 @@
-let soup = 'Chicken noodle soup'
-// let response = soup ? 'Yes we have soup!' : 'Sorry no soup today'
-// console.log(response)
+let testScore = 88
 
+let myGrade = testScore > 89 ? "A" :
+    testScore > 79 ? "B" :
+        testScore > 69 ? "C" :
+            testScore > 59 ? "D" :
+                "F"
 
-let isCustomerBanned = true;
-let soupAccess = isCustomerBanned
-    ? 'Sorry no soup for you'
-    : soup
-        ? 'Yes we have soup!'
-        : 'Sorry no soup today'
-
-console.log(soupAccess)
+console.log(myGrade)
