@@ -1,21 +1,21 @@
-let testScore = 89
-let collegeStudent = true;
-let grade
-
-if (testScore >= 90) {
-    grade = 'A';
-} else if (testScore >= 80) {
-    grade = 'B';
-} else if (testScore >= 70) {
-    grade = 'C';
-} else if (testScore >= 60) {
-    grade = 'D';
-} else {
-    if (collegeStudent) {
-        grade = "U"
+if (player === computer) {
+    // tie game!
+} else if (player === 'rock') {
+    if (computer === 'scissors') {
+        // player wins!
     } else {
-        grade = 'F';
+        // computer wins
+    }
+} else if (player === 'paper') {
+    if (computer === 'rock') {
+        // player wins!
+    } else {
+        // computer wins
+    }
+} else if (player === 'scissors') {
+    if (computer === 'paper') {
+        // player wins!
+    } else {
+        // computer wins
     }
 }
-
-console.log(grade)
