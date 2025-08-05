@@ -1,24 +1,33 @@
-const myVariable = 'Mathematics';
+const myNumber = 42
 
-// string methods
-console.log(myVariable.length)
+const myFloat = 42.5
 
-console.log(myVariable.charAt(0))
+const myString = '42'
 
+console.log(myNumber)
 
-console.log(myVariable.indexOf('M'))
-console.log(myVariable.indexOf('ath'))
-console.log(myVariable.lastIndexOf('at'))
+console.log(myString === myNumber)
 
-console.log(myVariable.slice(3, 7)); // returns characters starting from first argument to second argument - 
+const myNumberFromMyString = Number(myString)
 
-console.log(myVariable.toUpperCase())
-console.log(myVariable.toLowerCase())
-
-console.log(myVariable.includes('ath'))
-
-console.log(myVariable.split('')) // returns an array of individual letters
-console.log(myVariable.split('e')) // splits the string at the character provided (array returned does not include character)
+console.log(myNumberFromMyString === myNumber)
 
 
+console.log(Number(true), Number(false))
 
+console.log(Number.isInteger(myNumber))
+console.log(Number.isInteger(myFloat))
+
+console.log(Number.parseFloat(myNumber))
+console.log(Number.parseFloat(myString))
+console.log(Number.parseFloat("KKK"))
+
+
+console.log(myNumber.toFixed(2))
+
+console.log(Number.parseFloat(myFloat))
+console.log(Number.parseFloat(myString))
+console.log(Number.parseFloat("KKK"))
+
+console.log(Number.isNaN("Dave")) // checks if value is NaN and type is number
+console.log(isNaN("Dave")) // checks if value is NaN
