@@ -1,3 +1,5 @@
-// alert dialog
-alert("hello world")
+// confirmation dialog
+let myBoolean = confirm("ok === true\ncancel === false")
+console.log(myBoolean)
+
 
