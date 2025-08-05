@@ -1,9 +1,11 @@
-let testScore = 88
+let player = 'scissors'
+let computer = 'paper'
 
-let myGrade = testScore > 89 ? "A" :
-    testScore > 79 ? "B" :
-        testScore > 69 ? "C" :
-            testScore > 59 ? "D" :
-                "F"
+let result = player === computer ? 'tie game!' :
+    player === 'rock' && computer === 'paper' ? 'computer wins' :
+        player === 'paper' && computer === 'scissors' ? 'computer wins' :
+            player === 'scissors' && computer === 'rock' ? 'computer wins' :
+                'player wins!'
 
-console.log(myGrade)
+
+console.log(result)
