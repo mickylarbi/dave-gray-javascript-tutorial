@@ -1,61 +1,19 @@
-const myArray = []
 
-// add elements to an array
-myArray[0] = "Dave"
-myArray[1] = 1001
-myArray[2] = false
+const equipShelfA = ['baseball', 'football', 'volleyball']
+const equipShelfB = ['basketball', 'golf ball', 'tennis ball']
 
-console.log(myArray)
+const clothesShelfA = ['tank tops', 't-shirts', 'jerseys']
+const clothesShelfB = ['sweat tops', 'sweat pants', 'hoodies']
 
-console.log(myArray.length)
+console.log(equipShelfA[1])
+console.log(equipShelfB[0])
 
+const equipDept = [equipShelfA, equipShelfB]
+const clothesDept = [clothesShelfA, clothesShelfB]
 
-// get element by index
-console.log(myArray[0])
+console.log(equipDept[0][1])
+console.log(clothesDept[1][0])
 
-// last element
-console.log(myArray[myArray.length - 1])
-
-
-// array methods
-myArray.push('school')
-console.log(myArray)
-
-const lastItem = myArray.pop()
-console.log(myArray)
-console.log(lastItem)
-
-// adds to the beginning of the array
-myArray.unshift(42)
-console.log(myArray)
-
-// removes first element of the array
-myArray.shift()
-console.log(myArray)
-
-// array.splice(<starting index>, <number of elements to remove(optional)>, <insert at index(optional)>)
-myArray.splice(1, 0, 42)
-console.log(myArray)
-
-// array.slice(<starting index>, <ending index(not included)>)
-const newArray = myArray.slice(1)
-console.log(myArray)
-console.log(newArray)
-
-myArray.reverse()
-console.log(myArray)
-
-const joinedArray = myArray.join()
-console.log(myArray)
-console.log(joinedArray)
-
-const splitArray = joinedArray.split(',')
-console.log(splitArray)
-
-const concatArray = splitArray.concat(newArray)
-console.log(concatArray)
-
-const spreadArray = [...splitArray, ...newArray]
-console.log(spreadArray)
-
-
+const sportsStore = [equipDept, clothesDept]
+console.log(sportsStore[0][1][0])
+console.log(sportsStore[1][0][1])
