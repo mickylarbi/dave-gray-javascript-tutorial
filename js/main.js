@@ -1,101 +1,104 @@
-// 
+const myObj = { name: 'Mike' }
+console.log(myObj)
 
-const rpsArray = ['rock', 'paper', 'scissors']
+console.log(myObj.name)
 
-const initGame = () => {
-    const startGame = confirm('shall we play rock, paper or scissors?')
-    startGame ? playGame() : alert('okay maybe next time')
-}
-
-const playGame = () => {
-    while (true) {
-        let playerChoice = getPlayerChoice()
-        playerChoice = formatPlayerChoice(playerChoice)
-        if (playerChoice === '') {
-            invalidChoice()
-            continue;
-        }
-        if (!playerChoice) {
-            decidedNotToPlay()
-            break;
-        }
-        playerChoice = evaluatePlayerChoice(playerChoice);
-        if (!playerChoice) {
-            invalidChoice();
-            continue;
-        }
-
-        const computerChoice = getComputerChoice();
-        const result = determineWinner(playerChoice, computerChoice)
-
-        displayResult(result);
-
-        if (askToPlayAgain()) continue;
-
-        thanksForPlaying();
-        break;
+const anotherObj = {
+    alive: true,
+    answer: 42,
+    hobbies: ['eat', 'sleep', 'code'],
+    beverage: {
+        morning: 'coffee',
+        afternoon: 'iced tea'
+    },
+    action: function () {
+        return `time for ${this.beverage.morning}`
     }
 }
 
-const getPlayerChoice = () => {
-    return prompt('please enter rock, paper or scissors')
-}
 
-const formatPlayerChoice = (playerChoice) => {
-    if (playerChoice || playerChoice === '') {
-        return playerChoice.trim().toLowerCase()
+console.log(anotherObj)
+console.log(anotherObj.alive)
+console.log(anotherObj.answer)
+console.log(anotherObj.hobbies)
+console.log(anotherObj.hobbies[0])
+console.log(anotherObj.beverage)
+console.log(anotherObj.beverage.morning)
+console.log(anotherObj.beverage['afternoon'])
+console.log(anotherObj.action())
+
+console.log()
+console.log()
+console.log()
+
+
+const vehicle = {
+    wheels: 4,
+    engine: function () {
+        return 'vroom'
     }
-    return false
 }
 
-const decidedNotToPlay = () => {
-    alert('i guess you changed your mind. maybe next time')
+// inheritance
+const truck = Object.create(vehicle)
+truck.doors = 2
+console.log(truck)
+console.log(truck.wheels)
+console.log(truck.engine())
+
+const car = Object.create(vehicle)
+car.doors = 4
+car.engine = function () {
+    return 'whoosh'
+}
+console.log(car)
+console.log(car.wheels)
+console.log(car.engine())
+
+const tesla = Object.create(car)
+console.log(tesla)
+console.log(tesla.wheels)
+console.log(tesla.engine())
+tesla.engine = function () {
+    return 'shhhh'
+}
+console.log(tesla.engine())
+
+
+console.log()
+console.log()
+console.log()
+
+
+const band = {
+    vocals: 'Robert Plant',
+    guitar: 'Jimmy Page',
+    bass: 'John Paul Jones',
+    drums: 'John Bonham'
 }
 
-const evaluatePlayerChoice = (playerChoice) => {
-    if (rpsArray.includes(playerChoice)) {
-        return playerChoice
-    }
-    return false
+
+console.log(Object.keys(band))
+console.log(Object.values(band))
+
+
+for (let job in band) {
+    console.log(`On ${job}, it\'s ${band[job]}!`)
 }
 
-const invalidChoice = () => {
-    alert('you did not enter rock, paper or scissors')
-}
 
-const getComputerChoice = () => {
-    let computerChoice = Math.floor(Math.random() * 3)
-    return rpsArray[computerChoice]
-}
+// destructuring objexts
+const { guitar: myVariable, vocals } = band
 
-const determineWinner = (player, computer) => {
-    let result = `player: ${player}\ncomputer: ${computer}\n\n`;
+console.log(band)
+console.log(myVariable)
+console.log(vocals)
 
-    if (computer === player) {
-        result += 'tie game!'
-    } else if (rpsArray.indexOf(player) === 2 && rpsArray.indexOf(computer) === 0) {
-        result += 'computer wins'
-    } else if (rpsArray.indexOf(computer) === 2 && rpsArray.indexOf(player) === 0) {
-        result += 'player wins'
-    } else if (rpsArray.indexOf(player) > rpsArray.indexOf(computer)) {
-        result += 'player wins'
-    } else {
-        result += 'computer wins'
-    }
+function sings({ vocals }) { return `${vocals} sings` }
+console.log(sings(band))
 
-    return result
-}
 
-const displayResult = (result) => {
-    alert(result)
-}
+// deleting
+delete band.drums
 
-const askToPlayAgain = () => {
-    return confirm('Play again?')
-}
-
-const thanksForPlaying = () => {
-    alert('ok thanks for playing');
-}
-
-initGame()
+console.log(band)
